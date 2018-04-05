@@ -6,7 +6,8 @@ def input_students
 
   while !name.empty? do
     students << {name: name, cohort: :november}
-    puts "Now we have #{students.count} students"
+    puts "Now we have #{students.count} " +
+    (students.count > 1 ? "students" : "student")
     name = gets.chomp
   end
 
@@ -24,8 +25,9 @@ def print(students)
   end
 end
 
-def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+def print_footer(students)
+  puts "Overall, we have #{students.count} great " +
+  (students.count > 1 ? "students" : "student")
 end
 
 students = input_students
